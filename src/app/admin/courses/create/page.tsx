@@ -8,7 +8,6 @@ import { useMockDb } from "@/context/MockDbContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 export default function CreateCoursePage() {
   const router = useRouter();
@@ -73,7 +72,7 @@ export default function CreateCoursePage() {
         <CardContent className="pt-6">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="collegeName">วิทยาลัย / สถาบันฝึกอบรม</Label>
+              <label htmlFor="collegeName" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">วิทยาลัย / สถาบันฝึกอบรม</label>
               <select
                 id="collegeName"
                 name="collegeName"
@@ -91,18 +90,18 @@ export default function CreateCoursePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <Label htmlFor="courseCode">รหัสรายวิชา</Label>
+                <label htmlFor="courseCode" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">รหัสรายวิชา</label>
                 <Input id="courseCode" name="courseCode" placeholder="เช่น BCP-501" required value={formData.courseCode} onChange={handleChange} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="courseTitle">ชื่อรายวิชา / ชื่อหลักสูตร</Label>
+                <label htmlFor="courseTitle" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">ชื่อรายวิชา / ชื่อหลักสูตร</label>
                 <Input id="courseTitle" name="courseTitle" placeholder="เช่น การบริบาลทางเภสัชกรรมผู้ป่วยวิกฤต" required value={formData.courseTitle} onChange={handleChange} />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <Label htmlFor="type">ประเภทหลักสูตร</Label>
+                <label htmlFor="type" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">ประเภทหลักสูตร</label>
                 <select
                   id="type"
                   name="type"
@@ -115,13 +114,13 @@ export default function CreateCoursePage() {
                 </select>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="duration">ระยะเวลาการฝึกอบรม</Label>
+                <label htmlFor="duration" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">ระยะเวลาการฝึกอบรม</label>
                 <Input id="duration" name="duration" placeholder="เช่น 16 สัปดาห์ หรือ 3 ปี" required value={formData.duration} onChange={handleChange} />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="capacity">จำนวนที่เปิดรับสมัคร (คน)</Label>
+              <label htmlFor="capacity" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">จำนวนที่เปิดรับสมัคร (คน)</label>
               <Input id="capacity" name="capacity" type="number" min="1" placeholder="จำนวนที่นั่ง" required value={formData.capacity} onChange={handleChange} />
             </div>
 
